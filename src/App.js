@@ -1,5 +1,6 @@
 import React from 'react';
 import ListWrapper from './components/ListWrapper/ListWrapper';
+import Form from "./components/FormWrapper/FormWrapper";
 import './index.css';
 
 const initialSteteItems = [
@@ -34,12 +35,21 @@ class App extends React.Component {
         items: [...initialSteteItems]
     }
 
+    addPerson = (e) => {
+        e.preventDefault();
+        console.log(e.target[0].value);
+        console.log(e.target[1].value);
+        console.log(e.target[2].value);
+        console.log(e.target[3].value);
+    }
+
     render () {
         return (
             <div>
                 <ListWrapper
                     items={this.state.items}
                 />
+                <Form submitFunc={this.addPerson}/>
             </div>
         )
     }
