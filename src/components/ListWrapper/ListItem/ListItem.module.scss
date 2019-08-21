@@ -1,4 +1,4 @@
-.listItem__wrapper {
+.wrapper {
   list-style: none;
   padding: 50px 30px;
   margin: 0;
@@ -6,24 +6,24 @@
   align-items: center;
 }
 
-.listItem__image {
+.image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-right: 30px;
 }
 
-.listItem__name {
+.name {
   color: crimson;
   font-weight: 700;
 }
 
-.listItem__description {
+.description {
   font-weight: 300;
   margin: 10px 0 20px;
 }
 
-.listItem__button {
+.button {
   padding: 20px;
   font-weight: 500;
   background: none;

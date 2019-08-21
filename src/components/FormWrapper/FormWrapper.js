@@ -1,31 +1,31 @@
 import React from 'react';
-import './FormWrapper.css';
+import styles from './FormWrapper.module.scss';
 
 const FormWrapper = ({submitFunc}) => (
-    <div className="formWrapper">
+    <div className={styles.wrapper}>
         <h2>Add new favourite person</h2>
-        <form className="formWrapper__form" onSubmit={submitFunc}>
-            <div className="formWrapper__item">
-                <input type="text" name="name" placeholder=" " id="name"/>
-                <label htmlFor="name">Name</label>
-                <div className="formWrapper__item__bar"/>
+        <form className={styles.form} onSubmit={submitFunc}>
+            <div className={styles.item}>
+                <input type="text" className={styles.input} name="name" placeholder=" " id="name"/>
+                <label htmlFor="name" className={styles.label}>Name</label>
+                <div className={styles.itemBar}/>
             </div>
-            <div className="formWrapper__item">
-                <input type="text" name="link" placeholder=" " id="link"/>
-                <label htmlFor="link">Link</label>
-                <div className="formWrapper__item__bar"/>
+            <div className={styles.item}>
+                <input type="text" className={styles.input} name="link" placeholder=" " id="link"/>
+                <label htmlFor="link" className={styles.label}>Link</label>
+                <div className={styles.itemBar}/>
             </div>
-            <div className="formWrapper__item">
-                <input type="text" name="image" placeholder=" " id="image"/>
-                <label htmlFor="image">Image</label>
-                <div className="formWrapper__item__bar"/>
+            <div className={styles.item}>
+                <input type="text" className={styles.input} name="image" placeholder=" " id="image"/>
+                <label htmlFor="image" className={styles.label}>Image</label>
+                <div className={styles.itemBar}/>
             </div>
-            <div className="formWrapper__item">
-                <textarea name="description" placeholder=" " id="description"/>
-                <label htmlFor="description">Description</label>
-                <div className="formWrapper__item__bar"/>
+            <div className={styles.item}>
+                <textarea name="description" className={styles.input} placeholder=" " id="description"/>
+                <label htmlFor="description" className={styles.label}>Description</label>
+                <div className={styles.itemBar}/>
             </div>
-            <button type="submit" className="formWrapper__button">add new person</button>
+            <button type="submit" className={styles.button}>add new person</button>
         </form>
     </div>
 );

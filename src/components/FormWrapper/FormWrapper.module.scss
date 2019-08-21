@@ -1,16 +1,15 @@
-.formWrapper {
+.wrapper {
   width: 50%;
   margin: 50px auto 100px;;
   display: flex;
   flex-direction: column;
   align-items: center;
+  h2 {
+    color: #1E58FF;
+  }
 }
 
-.formWrapper h2 {
-  color: #1E58FF;
-}
-
-.formWrapper__form {
+.form {
   width: 100%;
   max-width: 350px;
   display: flex;
@@ -19,14 +18,14 @@
   align-items: flex-start;
 }
 
-.formWrapper__item {
+.item {
   width: 100%;
   margin: 24px 0;
   position: relative;
   flex-shrink: 0;
 }
 
-.formWrapper__item__bar {
+.itemBar {
   width: 100%;
   height: 2px;
   background: #7d7d7d;
@@ -70,11 +69,11 @@ input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label 
   font-size: 13px;
 }
 
-input:focus ~ .formWrapper__item__bar, textarea:focus ~ .formWrapper__item__bar {
+input:focus ~ .itemBar, textarea:focus ~ .itemBar {
   background: #1E58FF;
 }
 
-.formWrapper__button {
+.button {
   font-size: 10px;
   text-decoration: none;
   padding: 7px 12px;
