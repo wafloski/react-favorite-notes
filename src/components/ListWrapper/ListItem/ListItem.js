@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ListItem.module.scss';
+import Button from '../../Button/Button';
+import Title from '../../Title/Title';
 
 const ListItem = ({
     image,
@@ -18,15 +20,13 @@ const ListItem = ({
                 className={image ? styles.image : styles.imageNone}
             />
             <div>
-                <h2 className={styles.name}>{name}</h2>
+                <Title>{name}</Title>
                 <p className={styles.description}>{description}</p>
-                <a href={twitterLink} className={styles.button} target="_blank" rel="noopener noreferrer">visit twitter page</a>
+                <Button href={twitterLink}>visit person page</Button>
             </div>
         </li>
     )
 };
-
-
 
 ListItem.propTypes = {
     image: PropTypes.string,
@@ -38,6 +38,6 @@ ListItem.propTypes = {
 ListItem.defaultProps = {
     image: null,
     description: "One of the best developers"
-}
+};
 
 export default ListItem;

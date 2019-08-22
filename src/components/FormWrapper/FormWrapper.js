@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './FormWrapper.module.scss';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
+import Title from '../Title/Title';
 
 const FormWrapper = ({submitFunc}) => (
     <div className={styles.wrapper}>
-        <h2>Add new favourite person</h2>
+        <Title>Add new favourite person</Title>
         <form autoComplete="off" className={styles.form} onSubmit={submitFunc}>
             <Input
                 name="name"
@@ -27,7 +29,7 @@ const FormWrapper = ({submitFunc}) => (
                 label="Description"
                 maxLength={30}
             />
-            <button type="submit" className={styles.button}>add new person</button>
+            <Button>add new item</Button>
         </form>
     </div>
 );
