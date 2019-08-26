@@ -7,3 +7,10 @@
   border: 2px solid crimson;
   color: crimson;
 }
+
+.secondary {
+  @extend .button;
+  
+  background-color: crimson;
+  color: #fff;
+}
