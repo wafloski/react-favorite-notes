@@ -37,7 +37,7 @@ const initialSteteItems = [
 class Root extends React.Component {
     state = {
         items: [...initialSteteItems],
-        isModalOpen: false
+        isModalOpen: true
     }
 
     addPerson = (e) => {
