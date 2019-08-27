@@ -5,6 +5,7 @@ import ArticlesView from '../ArticlesView/ArticlesView';
 import NotesView from '../NotesView/NotesView';
 import TwittersView from '../TwittersView/TwittersView';
 import Header from '../../components/Header/Header';
+import Modal from '../../components/Modal/Modal';
 
 const initialSteteItems = [
     {
@@ -35,7 +36,8 @@ const initialSteteItems = [
 
 class Root extends React.Component {
     state = {
-        items: [...initialSteteItems]
+        items: [...initialSteteItems],
+        isModalOpen: false
     }
 
     addPerson = (e) => {
@@ -55,11 +57,25 @@ class Root extends React.Component {
         e.target.reset();
     }
 
+    openModal = () => {
+        this.setState({
+            isModalOpen: true
+        });
+    }
+
+    closeModal = () => {
+        this.setState({
+            isModalOpen: false
+        });
+    }
+
     render () {
+        const { isModalOpen } = this.state;
+
         return (
             <BrowserRouter>
                 <>
-                    <Header/>
+                    <Header openModalFunc={this.openModal}/>
                     <h1>cycu</h1>
                     <Switch>
                         <Route exact path="/" component={TwittersView}/>
@@ -67,6 +83,7 @@ class Root extends React.Component {
                         <Route path="/notes/:id" component={NotesView}/>
                         <Route path="/articles" component={ArticlesView}/>
                     </Switch>
+                    { isModalOpen && <Modal closeModalFunc={this.closeModal}/> }
                 </>
             </BrowserRouter>
         )
