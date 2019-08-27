@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import AppContext from '../../context';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ArticlesView from '../ArticlesView/ArticlesView';
 import NotesView from '../NotesView/NotesView';
@@ -37,7 +38,8 @@ const initialSteteItems = [
 class Root extends React.Component {
     state = {
         items: [...initialSteteItems],
-        isModalOpen: true
+        isModalOpen: false,
+        name: 'wafix'
     }
 
     addPerson = (e) => {
@@ -74,7 +76,7 @@ class Root extends React.Component {
 
         return (
             <BrowserRouter>
-                <>
+                <AppContext.Provider value={this.state.name}>
                     <Header openModalFunc={this.openModal}/>
                     <h1>cycu</h1>
                     <Switch>
@@ -84,7 +86,7 @@ class Root extends React.Component {
                         <Route path="/articles" component={ArticlesView}/>
                     </Switch>
                     { isModalOpen && <Modal closeModalFunc={this.closeModal}/> }
-                </>
+                </AppContext.Provider>
             </BrowserRouter>
         )
     }
